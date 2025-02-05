@@ -9,6 +9,8 @@ RUN apk add --no-cache bash curl && curl -1sLf \
 
 RUN apk --no-cache add infisical
 
-CMD ["infisical", "run", "--domain ${VAULT_URL}", "--projectId ${VAULT_PROJECT_ID}", "--env ${VAULT_ENV}",
-    "--",
-    "postgres -c log_statement=all -c max_connections=${DB_MAX_CONNECTION}"]
+CMD ["infisical", "run",
+    "--domain ${VAULT_URL}",
+    "--projectId ${VAULT_PROJECT_ID}",
+    "--env ${VAULT_ENV}",
+    "-- postgres -c log_statement=all -c max_connections=${DB_MAX_CONNECTION}"]
