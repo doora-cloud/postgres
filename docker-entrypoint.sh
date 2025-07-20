@@ -5,10 +5,9 @@ export $(infisical export --domain "$VAULT_URL" --projectId "$VAULT_PROJECT_ID" 
 
 echo "✅ Secrets loaded: DB_USER=$DB_USER, DB_NAME=$DB_NAME"
 
-# Cập nhật biến môi trường cho PostgreSQL
 export POSTGRES_USER=${DB_USER:-postgres}
 export POSTGRES_PASSWORD=${DB_PASS:-postgres}
-export POSTGRES_DB=${DB_NAME:-doora_wallet}
+export POSTGRES_DB=${DB_NAME:-doora_db}
 
 echo "🚀 Starting PostgreSQL..."
 exec docker-entrypoint.sh postgres

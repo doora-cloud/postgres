@@ -8,7 +8,7 @@ pipeline {
     }
 
     environment {
-        IMAGE_NAME = "${env.REGISTRY_ORG}/postgres:14"
+        IMAGE_NAME = "${env.REGISTRY_ORG}/postgres:17-alpine"
     }
 
     stages {
